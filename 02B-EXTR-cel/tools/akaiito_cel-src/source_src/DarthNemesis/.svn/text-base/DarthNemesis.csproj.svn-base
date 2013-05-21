@@ -1,0 +1,91 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7838108B-6B58-494A-8599-482BCD45F3FB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DarthNemesis</RootNamespace>
+    <AssemblyName>DarthNemesis</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\DarthNemesis\Application Data\ICSharpCode\SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\DarthNemesis.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cache\ConfigSetting.cs" />
+    <Compile Include="cache\XmlConfig.cs" />
+    <Compile Include="CompressionManager.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="project\AboutForm.cs" />
+    <Compile Include="project\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\AbstractGame.cs" />
+    <Compile Include="project\AbstractPackFile.cs" />
+    <Compile Include="project\Arm9File.cs" />
+    <Compile Include="project\Arm9PackFile.cs" />
+    <Compile Include="project\CachedTextFile.cs" />
+    <Compile Include="project\GameFiles.cs" />
+    <Compile Include="project\IPackFile.cs" />
+    <Compile Include="project\IGame.cs" />
+    <Compile Include="project\ITextFile.cs" />
+    <Compile Include="project\OverlayFile.cs" />
+    <Compile Include="project\OverlayPackFile.cs" />
+    <Compile Include="project\ScriptPointer.cs" />
+    <Compile Include="project\TextRange.cs" />
+    <Compile Include="project\TranslatorForm.cs" />
+    <Compile Include="project\TranslatorForm.Designer.cs">
+      <DependentUpon>TranslatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StreamHelper.cs" />
+    <EmbeddedResource Include="project\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\TranslatorForm.resx">
+      <DependentUpon>TranslatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cache" />
+    <Folder Include="project" />
+  </ItemGroup>
+</Project>

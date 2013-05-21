@@ -1,0 +1,169 @@
+
+The .cel format
+Reverse-engineered by Nik_
+
+All fields are little-endian unless specified otherwise.
+
+ I) .cel Signature (0x18 bytes)
+================================
+	4 bytes - 'CP10' signature (0x43 0x50 0x31 0x30)
+	2 bytes - reserved. Always zero for future compatibility
+	2 bytes - unknown, 0x0000 or 0x0002
+	2 bytes - number of ENTR chunks
+	2 bytes - number of ANIM chunks
+	2 bytes - number of IMAG chunks (number of images)
+	2 bytes - reserved. Always zero for future compatibility
+	4 bytes - datastream length, excluding .cel signature
+	4 bytes - unknown
+
+
+ II) .cel Datastream
+=====================
+All chunks may appear more than once, except for ENDC.
+Ordering:
+ ENTR (at least one)
+ ANIM (facultative)
+ IMAG (if no ANIM chunk present, equal to number of ENTR chunks)
+ ENDC
+
+The first occurence of each chunk type (except ENTR, which appears at 0x18)
+should be aligned on a 0x10 offset boundary.
+ 
+
+ II.1)  ENTR Entry
+-------------------
+The four-byte chunk type field contains the values
+	'ENTR' (0x45 0x4E 0x54 0x52)
+
+This chunk describes geometry for a subobject: a group of pictures (ANIM) or individual images/frames (IMAG).
+
+	4 bytes - absolute file offset of next chunk
+	2 bytes - sequence number starting from zero (ignored)
+	2 bytes - reserved. Always zero for future compatibility
+	2 bytes - (0xFFFF == -1) if .cel has zero ANIM chunk, (sequence number) otherwise
+	2 bytes - (0xFFFF == -1) if .cel has at least one ANIM chunk, (sequence number) otherwise
+
+	2 bytes - unknown, almost always zero
+	2 bytes - unknown, almost always zero
+	2 bytes - offset on the X axis, always zero
+	2 bytes - offset on the Y axis, always zero
+	4 bytes - stretching along the X axis, floating-point decimal, always 1.0f == 0x3F800000
+	4 bytes - stretching along the Y axis, floating-point decimal, always 1.0f == 0x3F800000
+	4 bytes - unknown, always zero
+	4 bytes - unknown, always 0xFFFFFFFF
+	4 bytes - unknown decimal number, usually either (0.5f == 0x3F000000) or (-0.5f == 0xBF000000)
+
+There may be multiple ENTR chunks; if so, they shall appear consecutively with no other intervening chunks.
+
+
+II.2)  ANIM Animation
+----------------------
+The four-byte chunk type field contains the values
+	'ANIM' (0x41 0x4E 0x49 0x4D)
+
+This chunk describes an animation. It is NOT a mandatory chunk.
+
+	4 bytes - absolute file offset of next chunk
+	2 bytes - sequence number starting from zero (ANIM specific)
+	2 bytes - reserved. Always zero for future compatibility
+	4 bytes - animation type
+	4 bytes - number of Animation groups
+	n*4 bytes - array of Animation groups
+
+
+Animation type is one of the following:
+	0 - typical
+	1 - ??
+
+An Animation group is defined as follows:
+	2 bytes - action
+	2 bytes - value
+
+When a .cel contains multiple IMAG chunks and no ANIM chunk is present, it is composed solely of still,
+independent images.
+There may be multiple ANIM chunks; if so, they shall appear consecutively with no other intervening chunks.
+The first ANIM chunk should be aligned on a 0x10 boundary.
+	
+	
+II.3)  IMAG Image
+------------------
+The four-byte chunk type field contains the values
+	'IMAG' (0x49 0x4D 0x41 0x47)
+
+This chunk describes a bitmap representation of an image.
+	
+	4 bytes - absolute file offset of next chunk
+	2 bytes - sequence number starting from zero (IMAG specific)
+	2 bytes - reserved. Always zero for future compatibility
+	2 bytes - width
+	2 bytes - height
+	4 bytes - pixel format
+	4 bytes - reserved. Always zero for future compatibility
+	4 bytes - compression method
+	4 bytes - length of image binary data
+	n bytes - binary data
+
+Width and height give the image dimensions in pixels. Zero is an invalid value.
+
+Pixel formats are mapped to image formats, listed in Table II.3.1. Implementations may elect to only support
+a subset of these.
+
+	Table II.3.1 - .cel pixel formats
+	#################################
+
+  pixel format | pixel format description
+	0          | image format 0x39
+	1          | image format 0x38
+	2          | image format 0x1A
+	3          | image format 0x19
+	5          | 8bpp palettized 8888-BGRA
+	6          | image format 0x3B
+	7          | 32bpp BGRA
+	8          | DXT1 texture (DDS)
+	9          | DXT2 texture (DDS)
+	10         | DXT3 texture (DDS)
+	11         | DXT4 texture (DDS)
+	12         | DXT5 texture (DDS)
+	14         | image format 0x101
+
+Compression methods are listed in Table II.3.2. Implementations may elect to only support a subset of these.
+
+	Table II.3.2 - .cel compression methods
+	#######################################
+
+  compression method | compression method description
+	0                | uncompressed
+	1                | LZSS-variant compression
+
+There may be multiple IMAG chunks; if so, they shall appear consecutively with no other intervening chunks.
+All IMAG chunks should be aligned on a 0x10 boundary.
+
+II.3.1)  Compression method: LZSS-variant
+##########################################
+.cel LZSS-variant compression method is a variant of the LZSS (Lempel-Ziv-Storer-Szymanski) compression scheme.
+Its particular characteristics are a 0x400 buffer (initialized with 0x00), minimal match length of 3.
+Also, the initial offset in the ring buffer is 0x3EE.
+Compressor assumes Big Endian ordering and the command byte provides bits from LSB to MSB.
+Length is encoded on 4 bits, implying match lengths in the 3-18 range. 12 bits directly encode the match index,
+in the ring buffer.
+
+Compressed data is presented as a single block with a header.
+Length values are presented in BIG ENDIAN byte order.
+
+	2 bytes - 'LZ' (0x4C 0x5A)
+	4 bytes - length of decompressed data
+	4 bytes - length of compressed data
+	n bytes - compressed data
+
+
+II.4)  ENDC End chunk
+----------------------
+The four-byte chunk type field contains the values
+	'ENDC' (0x45 0x4E 0x44 0x43)
+
+This chunk marks the end of the .cel datastream.
+
+	4 bytes - the size of .cel file
+
+There SHOULD be only one ENDC chunk.
+The ENDC chunk should be aligned on a 0x10 boundary.

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 3.1.1.5327
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLZ77", "BatchLZ77.csproj", "{B090AC74-3271-4E86-B6BD-C7304AE0B38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarthNemesis", "..\DarthNemesis\DarthNemesis.csproj", "{7838108B-6B58-494A-8599-482BCD45F3FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B090AC74-3271-4E86-B6BD-C7304AE0B38B}.Debug|x86.Build.0 = Debug|x86
+		{B090AC74-3271-4E86-B6BD-C7304AE0B38B}.Debug|x86.ActiveCfg = Debug|x86
+		{B090AC74-3271-4E86-B6BD-C7304AE0B38B}.Release|x86.Build.0 = Release|x86
+		{B090AC74-3271-4E86-B6BD-C7304AE0B38B}.Release|x86.ActiveCfg = Release|x86
+		{7838108B-6B58-494A-8599-482BCD45F3FB}.Debug|x86.Build.0 = Debug|x86
+		{7838108B-6B58-494A-8599-482BCD45F3FB}.Debug|x86.ActiveCfg = Debug|x86
+		{7838108B-6B58-494A-8599-482BCD45F3FB}.Release|x86.Build.0 = Release|x86
+		{7838108B-6B58-494A-8599-482BCD45F3FB}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

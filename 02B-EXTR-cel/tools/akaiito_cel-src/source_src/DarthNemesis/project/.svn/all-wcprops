@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/9/trunk/DarthNemesis/project
+END
+TranslatorForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/DarthNemesis/project/TranslatorForm.Designer.cs
+END
+CachedTextFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/DarthNemesis/project/CachedTextFile.cs
+END
+TranslatorForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/9/trunk/DarthNemesis/project/TranslatorForm.cs
+END
+OverlayPackFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/DarthNemesis/project/OverlayPackFile.cs
+END
+OverlayFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/DarthNemesis/project/OverlayFile.cs
+END
+IGame.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/DarthNemesis/project/IGame.cs
+END
+OverlayPointerFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/DarthNemesis/project/OverlayPointerFile.cs
+END
+IPackFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/project/IPackFile.cs
+END
+TranslatorForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/DarthNemesis/project/TranslatorForm.resx
+END
+GameFiles.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/project/GameFiles.cs
+END
+AbstractGame.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/DarthNemesis/project/AbstractGame.cs
+END
+AboutForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/DarthNemesis/project/AboutForm.Designer.cs
+END
+ITextFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/project/ITextFile.cs
+END
+AboutForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/project/AboutForm.cs
+END
+TextRange.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/project/TextRange.cs
+END
+AbstractPackFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/DarthNemesis/project/AbstractPackFile.cs
+END
+ScriptPointer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/DarthNemesis/project/ScriptPointer.cs
+END
+Arm9PackFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/DarthNemesis/project/Arm9PackFile.cs
+END
+Arm9File.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/DarthNemesis/project/Arm9File.cs
+END
+Arm9PointerFile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/DarthNemesis/project/Arm9PointerFile.cs
+END
+AboutForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/DarthNemesis/project/AboutForm.resx
+END

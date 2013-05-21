@@ -1,0 +1,10 @@
+TAG3030(#c00)=RESET
+TAG3031(#c01)=White (standard)
+TAG3032(#c02)=Red
+TAG3033(#c03)=Green
+TAG3034(#c04)=Marine
+TAG3035(#c05)=Yellow
+TAG3036(#c06)=Magenta
+
+
+TAG3331(#c31)=GlossaryHighlight (may be toggled off)

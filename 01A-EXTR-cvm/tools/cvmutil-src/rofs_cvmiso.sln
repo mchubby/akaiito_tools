@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcvm", "libcvm\libcvm.vcproj", "{EB77164D-3306-473F-A934-F511E157FDF6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cvmutil", "cvmutil.vcproj", "{5B252824-45AB-4D22-8ADF-E0C3E68540A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB77164D-3306-473F-A934-F511E157FDF6} = {EB77164D-3306-473F-A934-F511E157FDF6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cvm_test", "cvm_test.vcproj", "{A7E80063-EDFE-4025-86A9-70070FDFCBB0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB77164D-3306-473F-A934-F511E157FDF6} = {EB77164D-3306-473F-A934-F511E157FDF6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7E80063-EDFE-4025-86A9-70070FDFCBB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7E80063-EDFE-4025-86A9-70070FDFCBB0}.Debug|Win32.Build.0 = Debug|Win32
+		{A7E80063-EDFE-4025-86A9-70070FDFCBB0}.Release|Win32.ActiveCfg = Release|Win32
+		{A7E80063-EDFE-4025-86A9-70070FDFCBB0}.Release|Win32.Build.0 = Release|Win32
+		{EB77164D-3306-473F-A934-F511E157FDF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EB77164D-3306-473F-A934-F511E157FDF6}.Debug|Win32.Build.0 = Debug|Win32
+		{EB77164D-3306-473F-A934-F511E157FDF6}.Release|Win32.ActiveCfg = Release|Win32
+		{EB77164D-3306-473F-A934-F511E157FDF6}.Release|Win32.Build.0 = Release|Win32
+		{5B252824-45AB-4D22-8ADF-E0C3E68540A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5B252824-45AB-4D22-8ADF-E0C3E68540A4}.Debug|Win32.Build.0 = Debug|Win32
+		{5B252824-45AB-4D22-8ADF-E0C3E68540A4}.Release|Win32.ActiveCfg = Release|Win32
+		{5B252824-45AB-4D22-8ADF-E0C3E68540A4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AC90928-9BBA-49D6-A242-85EBEC9DD95A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cel2tiff</RootNamespace>
+    <AssemblyName>tiff2cel</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\cel_unlzss\unlzss-exceptions.cs">
+      <Link>unlzss\unlzss-exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_unlzss\unlzss.cs">
+      <Link>unlzss\unlzss.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\Hanasaku\BinaryIO.cs">
+      <Link>Hanasaku\BinaryIO.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\Hanasaku\cel2tiff.cs">
+      <Link>Hanasaku\cel2tiff.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\fastJSON\Getters.cs">
+      <Link>fastJSON\Getters.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\fastJSON\JSON.cs">
+      <Link>fastJSON\JSON.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\fastJSON\JsonParser.cs">
+      <Link>fastJSON\JsonParser.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\fastJSON\JsonSerializer.cs">
+      <Link>fastJSON\JsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\fastJSON\SafeDictionary.cs">
+      <Link>fastJSON\SafeDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\Hanasaku\ImageUtil.cs">
+      <Link>Hanasaku\ImageUtil.cs</Link>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="..\cel_cel2tiff\MiscUtil.Conversion\BigEndianBitConverter.cs">
+      <Link>MiscUtil.Conversion\BigEndianBitConverter.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.Conversion\EndianBitConverter.cs">
+      <Link>MiscUtil.Conversion\EndianBitConverter.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.Conversion\Endianness.cs">
+      <Link>MiscUtil.Conversion\Endianness.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.Conversion\LittleEndianBitConverter.cs">
+      <Link>MiscUtil.Conversion\LittleEndianBitConverter.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.IO\EndianBinaryReader.cs">
+      <Link>MiscUtil.IO\EndianBinaryReader.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.IO\EndianBinaryWriter.cs">
+      <Link>MiscUtil.IO\EndianBinaryWriter.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\MiscUtil.IO\NonClosingStreamWrapper.cs">
+      <Link>MiscUtil.IO\NonClosingStreamWrapper.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\cel_cel2tiff\Mono.Options\Mono.Options\Options.cs">
+      <Link>Mono.Options\Mono.Options\Options.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\cel_cel2tiff\frame0.png">
+      <Link>frame0.png</Link>
+    </Content>
+    <Content Include="MiscUtil.licence.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

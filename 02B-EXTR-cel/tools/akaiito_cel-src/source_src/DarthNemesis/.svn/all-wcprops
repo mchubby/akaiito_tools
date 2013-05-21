@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/9/trunk/DarthNemesis
+END
+CustomDictionary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/DarthNemesis/CustomDictionary.xml
+END
+StreamHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/DarthNemesis/StreamHelper.cs
+END
+Constants.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/DarthNemesis/Constants.cs
+END
+CompressionManager.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5/trunk/DarthNemesis/CompressionManager.cs
+END
+DarthNemesis.sln
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/DarthNemesis/DarthNemesis.sln
+END
+DarthNemesis.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/DarthNemesis/DarthNemesis.csproj
+END
+Log.cs
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/2/trunk/DarthNemesis/Log.cs
+END

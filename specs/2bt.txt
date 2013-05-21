@@ -1,0 +1,30 @@
+@4 BYTE nBytesPerRow (stride)
+@7 BYTE charset (doublebyte=> 0x80)
+@8 BYTE nWidth (columns) (nNibblesPerRow)
+@C BYTE nHeight (rows)
+
+
+@10 start of font binary
+1 glyph = nWidth*nHeight
+
+
+char index [] at table [4AC77C] (0x1B41 ordered glyphs):
+=> file offset (0x10 + iChar * nWidth *nHeight
+
+
+
+do
+{
+
+	nh = (c & 0xF0) >> 4
+	if (nh == 0) nh = 0x48
+	else nh |= 0x48
+	*pOut++ = nh
+	nl = (c & 0x0F)
+	if (nl == 0) nh = 0x48
+	else nl |= 0x48
+
+//i.e. nh, nl in [0x48 = 'H'; 0x4F = 'O']
+
+	
+}

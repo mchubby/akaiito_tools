@@ -1,0 +1,121 @@
+8
+
+dir
+12
+http://darthnemesis.googlecode.com/svn/trunk/DarthNemesis
+http://darthnemesis.googlecode.com/svn
+
+
+
+2010-05-17T09:08:16.570934Z
+9
+darthnemesis
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c0b542ae-0efe-11df-ae15-f54ea2efe8cf
+
+CustomDictionary.xml
+file
+
+
+
+
+2011-05-20T18:55:48.076750Z
+cd43ecc0bf7d8a8ef3ee0c3924c02c32
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+StreamHelper.cs
+file
+
+
+
+
+2011-05-20T18:55:48.080656Z
+6753f5639f16b2ea62d4f3ff8315a7c0
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+Constants.cs
+file
+
+
+
+
+2011-05-20T18:55:48.084562Z
+a0b22457a8c8b8ab263e8249d44ea7df
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+CompressionManager.cs
+file
+
+
+
+
+2011-05-20T18:55:48.090421Z
+6095fdc068816864f5dd229ad7bb12e9
+2010-05-10T05:19:04.102797Z
+5
+darthnemesis
+
+DarthNemesis.sln
+file
+
+
+
+
+2011-05-20T18:55:48.092375Z
+82c38a070ec19b03cc5d4b34d9dd0519
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+cache
+dir
+
+DarthNemesis.csproj
+file
+
+
+
+
+2011-05-20T18:55:48.096281Z
+9a0cf9af25eb25988ed510818005ab6e
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+Log.cs
+file
+
+
+
+
+2011-05-20T18:55:48.100187Z
+f295f2cee09165377ce9984a47048ec4
+2010-05-10T04:09:00.841662Z
+2
+darthnemesis
+
+project
+dir
+
+Properties
+dir
+
