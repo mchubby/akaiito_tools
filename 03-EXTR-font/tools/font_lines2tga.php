@@ -1,7 +1,8 @@
 <?php
 
 $PALETTE = array(
-	0 => "\xFF\xFF\xFF\x00",
+	//0 => "\xFF\xFF\xFF\x00",
+	0 => "\x00\x00\x00\x00",
 	1 => "\xFF\xFF\xFF\x33",
 	2 => "\xFF\xFF\xFF\x55",
 	3 => "\xFF\xFF\xFF\x77",
@@ -65,6 +66,24 @@ if (strlen($script))
 		//$NUMTILES=6975;  // 0x813F to ...
 		break;
 
+	case 'font2408':
+		// Settings for 2408 (24px, 12px-wide, 8-bit chars)
+		//$NUMCOLS=12;
+		//$NUMROWS=24;
+		//$BYTESPERROW=6;
+		//$TILESIZE=24*6;  // 12 half-bytes in 6 bytes
+		//$NUMTILES=0x5F;  // 0x20 to 0x7E
+		break;
+
+	case 'font2416':
+		// Settings for 2416 (24px, 24px-wide, high range)
+		//$NUMCOLS=24;
+		//$NUMROWS=24;
+		//$BYTESPERROW=12;
+		//$TILESIZE=24*12;  // 24 half-bytes in 12 bytes
+		//$NUMTILES=6975;  // 0x813F to ...
+		break;
+
 	default:
 		exit(2);
 	}
@@ -86,8 +105,6 @@ if (strlen($script))
 	$bin .= "\x20";	//depth              // Image color depth (bits per pixel).
 	$bin .= "\x28";	//descriptor         // Image attribute flags.
 	file_put_contents($binpath, $bin);
-
-	$tiles = array();
 
 	for ( $tilescount = 0; $tilescount < $NUMTILES; ++$tilescount )
 	{

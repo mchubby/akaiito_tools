@@ -1,7 +1,8 @@
 <?php
 
 $REVERSEPALETTE = array(
-	"\xFF\xFF\xFF\x00" => 0x00,
+//	"\xFF\xFF\xFF\x00" => 0x00,
+	"\x00\x00\x00\xFF" => 0x00,
 	"\xFF\xFF\xFF\x33" => 0x01,
 	"\xFF\xFF\xFF\x55" => 0x02,
 	"\xFF\xFF\xFF\x77" => 0x03,
@@ -22,8 +23,9 @@ if (strlen($script))
 	if(!$fp) exit(1);
 	
 	$name = strlen($argv[2])? $argv[2] : $info['filename'];
+	$patterntest = explode('_', $name, 2);
 
-	switch ($name)
+	switch ($patterntest[0])
 	{
 	case 'font2008':
 		// Settings for 2008 (20px, 10px-wide, 8-bit chars)
@@ -61,8 +63,26 @@ if (strlen($script))
 		$NUMTILES=6975;  // 0x813F to ...
 		break;
 
+	case 'font2408':
+		// Settings for 2408 (24px, 12px-wide, 8-bit chars)
+		$NUMCOLS=12;
+		$NUMROWS=24;
+		$BYTESPERROW=6;
+		$TGATILESIZE=$NUMCOLS*$NUMROWS*4;  // bgra
+		$NUMTILES=0x5F;  // 0x20 to 0x7E
+		break;
+
+	case 'font2416':
+		// Settings for 2416 (24px, 24px-wide, high range)
+		$NUMCOLS=24;
+		$NUMROWS=24;
+		$BYTESPERROW=12;
+		$TGATILESIZE=$NUMCOLS*$NUMROWS*4;  // bgra
+		$NUMTILES=6975;  // 0x813F to ...
+		break;
+
 	default:
-        error_log("Unrecognised font, must be one of 'font2008', 'font2016', 'font2208', 'font2216'");
+        error_log("Unrecognised font, must be one of 'font2008', 'font2016', 'font2208', 'font2216', 'font2408', 'font2416'");
 		exit(2);
 	}
 	$PADDINGX=str_repeat("\x00", $NUMROWS * $BYTESPERROW - 0x10);
@@ -110,6 +130,9 @@ if (strlen($script))
 			for ($icol = 0; $icol < $NUMCOLS; ++$icol)
 			{
 				$px = substr($datatile, $rowbase + $icol * 4, 4);
+if (!isset($REVERSEPALETTE[ $px ])) {
+var_dump($irow, $icol);
+}
 				$nibbles[] = $REVERSEPALETTE[ $px ];
 			}
 			if ((count($nibbles) & 0x01) == 0x01)
